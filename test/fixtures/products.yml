@@ -1,11 +1,17 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+gr1:
+  id: 1
+  code: "GR1"
+  name: "Green Tea"
+  base_price: 3.11
 
-one:
-  code: MyString
-  name: MyString
-  base_price: 9.99
+sr1:
+  id: 2
+  code: "SR1"
+  name: "Strawberries"
+  base_price: 5.00
 
-two:
-  code: MyString
-  name: MyString
-  base_price: 9.99
+cf1:
+  id: 3
+  code: "CF1"
+  name: "Coffee"
+  base_price: 11.23

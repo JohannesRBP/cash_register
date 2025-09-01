@@ -1,9 +1,26 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+bogof_gr1:
+  id: 1
+  type: "BogofOffer"
+  product_id: 1
+  threshold: null
+  new_price: null
+  factor_num: null
+  factor_den: null
 
-one:
-  type: 
-  product: one
+bulk_sr1:
+  id: 2
+  type: "BulkDiscountOffer"
+  product_id: 2
+  threshold: 3
+  new_price: 4.50
+  factor_num: null
+  factor_den: null
 
-two:
-  type: 
-  product: two
+fractional_cf1:
+  id: 3
+  type: "FractionalDiscountOffer"
+  product_id: 3
+  threshold: 3
+  new_price: null
+  factor_num: 2
+  factor_den: 3
