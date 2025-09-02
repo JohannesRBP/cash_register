@@ -68,6 +68,7 @@ Architecture Decisions
 Single Table Inheritance (STI)
 
 Used STI pattern for offers to allow easy extension of discount types:
+
 Offer (base)
 ├── BogofOffer
 ├── BulkDiscountOffer  
