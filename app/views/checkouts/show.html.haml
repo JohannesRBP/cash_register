@@ -1,0 +1,42 @@
+.container
+  .header
+    .logo-title
+      = image_tag 'amenitiz.png', alt: 'Amenitiz Logo', class: 'logo'
+      %h1 Cashier Register
+    %p Checkout Summary
+
+  .main-content
+    .card
+      .title
+        🛒 Your Cart
+        - if @grouped_items.any?
+          %span.item-count= @grouped_items.sum { |item| item[:quantity] }
+
+      - if @grouped_items.any?
+        - @grouped_items.each do |item|
+          .group
+            .group-header
+              %span= "#{item[:product].name} (#{item[:quantity]}x)"
+              - if item[:offer]
+                %span.offer-label= item[:offer].class.name.gsub('Offer', '') + " Applied"
+
+            %ul.group-items
+              %li Subtotal: #{number_to_currency(item[:subtotal], unit: "€", format: "%n %u")}
+
+        .total
+          .label Total Amount
+          .amount= number_to_currency(@total, unit: "€", format: "%n %u" )
+
+        .buttons
+          = button_to "Clear Cart", clear_checkout_path, method: :post, class: "btn btn-clear"
+          = link_to "Back to Products", products_path, class: "btn btn-primary"
+
+      - else
+        .empty
+          .icon 🛒
+          %p Your cart is empty
+          %br
+          Add some products to get started
+
+        .back-button-section
+          = link_to "Back to Products", products_path, class: "btn btn-primary"

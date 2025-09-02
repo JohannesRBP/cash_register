@@ -1,0 +1,28 @@
+.container
+  .header
+    .logo-title
+      = image_tag 'amenitiz.png', alt: 'Amenitiz Logo', class: 'logo'
+      %h1 Cashier Register
+
+
+  .main-content
+    .card
+      .title-bar
+        %h1 Products
+        = image_tag 'logo.png', alt: 'Amenitiz Logo', class: 'product-logo'
+
+      .offers
+        %h3 Active Special Offers
+        .offer • Green Tea: Buy 1 Get 1 Free!
+        .offer • Strawberries: 3+ for €4.50 each
+        .offer • Coffee: 3+ for 33% off each
+
+      .product-list
+        - @products.each do |product|
+          .product
+            .name= product.name
+            .price= number_to_currency(product.base_price, unit: "€", format: "%n %u")
+            = button_to "Add to Cart", scan_checkout_path(product_id: product.id), method: :post, class: "btn btn-primary"
+
+      .checkout-section
+        = link_to "Go to Checkout", checkout_path, class: "checkout-button"
