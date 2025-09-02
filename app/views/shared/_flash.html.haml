@@ -1,0 +1,5 @@
+- if notice.present?
+  .flash-container
+    .flash.flash-notice{ id: "notice_#{SecureRandom.hex(4)}", data: { controller: "flash" } }
+      %p= notice
+      %button.flash-close{ data: { action: "click->flash#close" } } ×
