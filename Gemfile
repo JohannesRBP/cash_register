@@ -19,6 +19,9 @@ gem "jbuilder"
 #Haml gem
 gem 'haml-rails'
 gem 'html2haml'
+
+#Rspec
+gem 'rspec-rails'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
