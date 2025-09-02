@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_01_142338) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_01_222212) do
   create_table "offers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "type"
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "threshold"
-    t.decimal "new_price", precision: 10
+    t.decimal "new_price", precision: 10, scale: 2
     t.integer "factor_num"
     t.integer "factor_den"
     t.index ["product_id"], name: "index_offers_on_product_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_01_142338) do
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "code"
     t.string "name"
-    t.decimal "base_price", precision: 10
+    t.decimal "base_price", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
