@@ -45,6 +45,7 @@ SR1: Strawberries (€5.00)
 CF1: Coffee (€11.23)
 
 💸 Special Offers Implemented
+
 🆓 BOGOF (Buy One Get One Free) - Green Tea
 
 Rule: Buy 1 Green Tea, get 1 free
